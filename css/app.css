@@ -1,0 +1,31 @@
+/**
+ * app css stylesheet - Makhtar Diouf
+ * $Id$ 
+@import url("bootstrap.min.css");
+ */
+ng-view {
+    min-height: 200px;
+}
+.nav a:hover {color:blue;}
+.nav a { color:black; background-color:lightgrey;}
+
+#title {font-size:20px; color: #fff;}
+
+#content {min-height: 400px;}
+
+.header .jumbotron {
+    color: #fff;
+    background-color:#150000;/* #690000;#292929; */   
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    min-height: 100px;
+    color: #fff;
+    background-color:#150000;
+    padding-top: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+.footer a{ color: #fff;}
