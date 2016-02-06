@@ -78,7 +78,7 @@
 
             <div class="row footer"> 
                 <div class="col-md-12"> 
-                    <p><i>By <a href="mailto:makhtar.diouf@gmail.com">Elhadji Makhtar Diouf - For GNU Arduino Course 2015</a></i></p>        
+                    <p><i>By <a href="mailto:makhtar.diouf@gmail.com">Elhadji Makhtar Diouf - 2015-2016</a></i></p>        
                     <p> Graphs generated with Google JS API: <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart" target="_blank">
                             https://developers.google.com/chart/interactive/docs/gallery/linechart</a><p>
                 </div>               
