@@ -9,7 +9,7 @@ This is a quick hack to monitor data sent from an Arduino board, and could be ex
 
 - The UI plots measured data with Google Charts, and reloads every few secs.
  
-Deployable under any web server or with the PHP internal server: e.g.  php -S localhost:9000
+Deployable under any web server or with the PHP internal server: e.g.  php -S 0.0.0.0:9000 , then set the server IP address in FinalArduiMonitor.ino
 
 (C) 2016 Makhtar Diouf
 
