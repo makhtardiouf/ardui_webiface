@@ -1,4 +1,4 @@
-<!-- Process received data, and display graphs - Makhtar Diouf -->
+<!-- Process received data, and display charts - Makhtar Diouf -->
 
 <script type="text/javascript">
     // Load the Visualization API and the piechart package.
@@ -35,18 +35,17 @@ for (; $i < sizeof($charts); $i++) {
     json_encode($obj->getData($charts[$i]));
     ?>
             ]);
-                    options = {
-                        title: '<?php echo $charts[$i]; ?> vs time',
-                        curveType: 'function',
-                        legend: {position: 'top'},
-                        width: 500,
-                        height: 300
-                    };
+            options = {
+                title: '<?php echo $charts[$i]; ?> vs time',
+                curveType: 'function',
+                legend: {position: 'top'},
+                width: 500,
+                height: 300
+            };
 
             // Instantiate and draw our chart
             chart = new google.visualization.LineChart(document.getElementById('<?php echo $charts[$i]; ?>'));
             chart.draw(data, options);
-
 <?php } ?>
     }
 </script>

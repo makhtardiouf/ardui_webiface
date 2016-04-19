@@ -12,19 +12,21 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="js/app.js"></script>       
-        <title> Arduino control and monitoring interface - Makhtar </title>        
+        <title> Arduino control and monitoring interface</title>        
     </head>
     <body> <!--  Top Header --> 
-        <div class="container-fluid header">
+        <div class="container header">
             <div class="jumbotron"> 
-                <h4> Arduino control and monitoring interface - Makhtar </h4> 
+                <h4> Arduino control and monitoring interface</h4> 
                 <progress id="pbar"> </progress>  
-                <br>Displaying data for: <?php echo date("Y-m-d"); require_once 'read.php'; ?> ...
+                <br>Displaying data for: <?php echo date("Y-m-d"); 
+                $_SESSION["error_msg"] = "";
+                require_once 'read.php'; ?> ...
             </div>                
         </div>
 
         <!-- Main content -->
-        <div class="view-container container-fluid content">
+        <div class="view-container container content">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
@@ -37,29 +39,32 @@
                 </div>
                 <div class="col-md-1">
                     <a href="#" id="arduinput" data-toggle="popover" title="Popover Header" data-content="" onclick="sendInput('alert');">
-                        <button type="button" class="btn btn-danger">Send Alert</button>
+                        <button type="button" class="btn btn-danger">Send Command</button>
                     </a>
                 </div>
             </div>
 
-            <!-- Generate the javascript for plotting graph with Google API
+            <!-- Generate the javascript code for plotting graphes with Google API
             https://developers.google.com/chart/interactive/docs/gallery/linechart -->
             <div id="graphs"> <?php require_once 'visualize.php'; ?> </div>
 
-            <div class="row" id="graph1">               
-                <div class="col-md-3" id="hum"></div>          
-                <div class="col-md-3" id="sound"></div>                  
-            </div>
-            <div class="row" id="graph2">                
-                <div class="col-md-3" id="light"></div>           
-                <div class="col-md-3" id="temp"></div>   
-            </div>
-            <div class="row">
+            <div class="row" id="graph1">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">
-                    <!-- Display logs of received requests in a textarea -->
+                <div class="col-md-5" id="hum">Test</div>          
+                <div class="col-md-5" id="sound"></div>                  
+            </div>
+            <div class="row" id="graph2">  
+                <div class="col-md-1"></div>
+                <div class="col-md-5" id="light"></div>           
+                <div class="col-md-5" id="temp"></div>   
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1"> </div>
+                <div class="col-md-10">
+                    <!-- Display logs of received requests -->
                     <h5>Output: </h5>
-                    <textarea rows="10" cols="100" id="output"></textarea>
+                    <textarea rows="10" cols="150" id="output"></textarea>
                 </div>        
             </div>
 
@@ -75,12 +80,14 @@
                     </div>
                 </div>
             </div>
-
+            
+            <br/><div class="alert-warning"><?php echo $_SESSION["error_msg"]; ?></div>
+            
             <div class="row footer"> 
                 <div class="col-md-12"> 
-                    <p><i>By <a href="mailto:makhtar.diouf@gmail.com">Elhadji Makhtar Diouf - 2015-2016</a></i></p>        
-                    <p> Graphs generated with Google JS API: <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart" target="_blank">
-                            https://developers.google.com/chart/interactive/docs/gallery/linechart</a><p>
+                    <p><i>&copy; 2015-<?php echo date("Y"); ?> <a href="mailto:makhtar.diouf@gmail.com">Makhtar Diouf</a></i></p>        
+                    <p><a href="https://developers.google.com/chart/interactive/docs/gallery/linechart" target="_blank">
+                             Graphs generated with Google JS API</a><p>
                 </div>               
             </div>
         </div>    

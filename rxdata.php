@@ -1,7 +1,8 @@
 <?php
-
-// Makhtar Diouf $Id: rxdata.php, e9007b347294  makhtar $
-// Save monitoring data from arduino
+/** Makhtar Diouf
+ * Save monitoring data received from arduino
+ * $Id: rxdata.php, e9007b347294  makhtar $
+ */
 
 $date = date("Y-m-d");
 $dir = "output/" . $date . "/";
@@ -18,7 +19,7 @@ foreach ($files as $file) {
 
     $val = $_GET["$file"];
     if (!empty($val)) {
-        $json = array(strtotime('now'), $val);  // date("Y-m-d h:i:s")
+        $json = array(strtotime('now'), $val);
         $data = json_encode($json) . "\n";
         file_put_contents($dir . $file . ".json", $data, FILE_APPEND);
     }
@@ -30,7 +31,6 @@ foreach ($files as $file) {
 }
 
 // Save request to log file
-file_put_contents($dir . "rxdata.log", date("Y-m-d h:i:s") . " RX from " . $_SERVER['REMOTE_ADDR'] . ":" . $_SERVER['REMOTE_PORT'] .
+file_put_contents($dir . "rxdata.log", date("Y-m-d h:i:s") . 
+        " RX from " . $_SERVER['REMOTE_ADDR'] . ":" . $_SERVER['REMOTE_PORT'] .
         " " . $_SERVER['REQUEST_URI'] . "\n", FILE_APPEND);
-
-//   var_dump($_SERVER);
