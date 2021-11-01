@@ -1,5 +1,5 @@
 # ardui-webiface
-PHP web interface for data collection with Arduino
+Web interface for data collection with Arduino
 
 This is a quick implementation of a monitoring app that process data sent from an Arduino board. It could be extended for remote control purposes: think IoT.
 
