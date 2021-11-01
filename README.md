@@ -5,7 +5,7 @@ This is a quick implementation of a monitoring app that process data sent from a
 
 - The sample arduino program is in arduino/FinalArduiMonitor.ino, which measures Temperature, Humidity, Light & Sound levels every 10sec and sends the data via wifi to the PHP web app.
 
-- The app saves received data in json format under the directory ardui-webiface/output/$date...
+- The app saves received data in json format under the directory ardui-webiface/output/$date... Could use SQLite for storage.
 
 - The UI plots measured data with Google Charts, and reloads every few secs.
  
