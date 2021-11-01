@@ -1,6 +1,8 @@
-// Makhtar Final Arduino Project 2015-12-09
+// Environment monitoring using an Arduino Board
+// (C) 2015 - Makhtar Diouf
 // Requires libraries from the Ardu-ez CD
-// To be moved to a main.h  header
+
+// Files to be moved to a main.h  header
 #include "Humidity.h"
 #include "RgbLed.h"
 #include "Buzzer.h"
